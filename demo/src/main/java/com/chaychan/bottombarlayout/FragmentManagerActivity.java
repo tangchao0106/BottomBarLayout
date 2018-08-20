@@ -2,6 +2,7 @@ package com.chaychan.bottombarlayout;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,27 +13,44 @@ import android.widget.ImageView;
 
 import com.chaychan.library.BottomBarItem;
 import com.chaychan.library.BottomBarLayout;
+import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentManagerActivity extends AppCompatActivity {
 
-    private List<TabFragment> mFragmentList = new ArrayList<>();
+    private List<Fragment> mFragmentList = new ArrayList<>();
     private FrameLayout mFlContent;
     private BottomBarLayout mBottomBarLayout;
     private RotateAnimation mRotateAnimation;
     private Handler mHandler = new Handler();
+    protected ImmersionBar mImmersionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_manager);
+        //初始化沉浸式
+        if (isImmersionBarEnabled()){
+            initImmersionBar();
 
+        }
         initView();
         initData();
         initListener();
     }
+    protected boolean isImmersionBarEnabled() {
+        return true;
+    }
+
+    protected void initImmersionBar() {
+        //在BaseActivity里初始化
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.init();
+    }
+
+
 
     private void initView() {
         mFlContent = (FrameLayout) findViewById(R.id.fl_content);
@@ -41,11 +59,18 @@ public class FragmentManagerActivity extends AppCompatActivity {
 
     private void initData() {
 
-        TabFragment homeFragment = new TabFragment();
-        Bundle bundle1 = new Bundle();
-        bundle1.putString(TabFragment.CONTENT, "首页");
-        homeFragment.setArguments(bundle1);
+        MainFragment homeFragment = new MainFragment();
+
         mFragmentList.add(homeFragment);
+
+
+        TabFragment videoFragment1 = new TabFragment();
+        Bundle bundle21 = new Bundle();
+        bundle21.putString(TabFragment.CONTENT, "测试");
+        videoFragment1.setArguments(bundle21);
+        mFragmentList.add(videoFragment1);
+
+
 
         TabFragment videoFragment = new TabFragment();
         Bundle bundle2 = new Bundle();
@@ -59,11 +84,7 @@ public class FragmentManagerActivity extends AppCompatActivity {
         microFragment.setArguments(bundle3);
         mFragmentList.add(microFragment);
 
-        TabFragment meFragment = new TabFragment();
-        Bundle bundle4 = new Bundle();
-        bundle4.putString(TabFragment.CONTENT, "我的");
-        meFragment.setArguments(bundle4);
-        mFragmentList.add(meFragment);
+
 
         changeFragment(0); //默认显示第一页
     }

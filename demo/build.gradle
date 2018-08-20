@@ -28,4 +28,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
     compile project(':library')
+    compile 'com.orhanobut:logger:2.1.1'
+    compile 'com.zxy.android:recovery:0.1.4'
+    implementation 'com.jude:rollviewpager:1.4.6'
+    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+
+    compile 'com.android.support:design:25.3.1'
 }
