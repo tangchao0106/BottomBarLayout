@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="使用ViewPager"
-        android:textAllCaps="false"
-        android:layout_centerInParent="true"
-        android:onClick="useVp"
-        />
+        android:text="使用ViewPager" />
 
     <Button
-        android:layout_below="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="不使用ViewPager"
-        android:textAllCaps="false"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:onClick="noUseVp"
-        />
+        android:text="不使用ViewPager" />
+
+    <Button
+        android:id="@+id/bt_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="配电巡视二期测试" />
 
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/bt_4"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="新融合APP测试" />
+
+
+</LinearLayout>

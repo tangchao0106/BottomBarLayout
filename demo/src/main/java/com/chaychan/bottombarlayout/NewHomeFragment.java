@@ -2,25 +2,19 @@ package com.chaychan.bottombarlayout;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.jude.rollviewpager.RollPagerView;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainFragment extends BaseFragment implements View.OnClickListener,
+public class NewHomeFragment extends BaseFragment implements View.OnClickListener,
         CoveragerAdapter.ICallBack, ViewPager.OnPageChangeListener {
 
     MyViewPager myViewPager;
@@ -39,7 +33,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener,
 
     @Override
     public int getLayoutID() {
-        return R.layout.fragment_mainview;
+        return R.layout.fragment_newmainview;
     }
 
     @Override
@@ -121,12 +115,9 @@ public class MainFragment extends BaseFragment implements View.OnClickListener,
         switch (position) {
 
             case 0:
-                countTypeName.setText("输电统计");
                 indexImageView.setImageResource(R.mipmap.icon_more2);
                 break;
             case 1:
-                countTypeName.setText("配电统计");
-
                 indexImageView.setImageResource(R.mipmap.icon_more1);
                 break;
         }

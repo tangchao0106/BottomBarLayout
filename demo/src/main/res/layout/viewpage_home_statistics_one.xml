@@ -7,92 +7,144 @@
     <RelativeLayout
         android:id="@+id/view_left"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center">
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.chaychan.bottombarlayout.ArcView
-                android:id="@+id/arc_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
+                android:layout_marginTop="10dp"
 
+                android:layout_weight="1.3"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center"
+                    android:text="巡视计划"
+                    android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/tv_count_ywc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="已完成"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
+                <com.chaychan.bottombarlayout.ArcView
 
-                    <TextView
-                        android:id="@+id/tv_count_ywc_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:text="11"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                    android:id="@+id/arc_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="占位符"
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_count_wwc"
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="未完成"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_count_wwc_count"
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/home_bg1" />
+
+                        <TextView
+                            android:id="@+id/tv_count_ywc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:text="已完成"
+                            android:textColor="@color/gray_33"
+
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_count_ywc_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:text="100"
+
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:text="11"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/home_bg2" />
+
+                        <TextView
+                            android:id="@+id/tv_count_wwc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+
+                            android:text="未完成"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_count_wwc_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="100"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
+
+
             </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>
 
     <TextView
-        android:layout_width="1sp"
-        android:layout_height="90sp"
+        android:layout_width="0.1dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_vertical"
         android:background="@color/gray" />
 
     <RelativeLayout
         android:id="@+id/view_right"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center">
 
@@ -101,66 +153,150 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.chaychan.bottombarlayout.ArcView
-                android:id="@+id/arc_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:layout_weight="1.3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:text="缺陷统计"
+                    android:textSize="12sp" />
+
+                <com.chaychan.bottombarlayout.ArcView
+                    android:id="@+id/arc_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:gravity="center"
 
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center"
+                    android:text="占位符"
 
-                    <TextView
-                        android:id="@+id/tv_count_ywc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="已完成"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_count_ywc_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:text="11"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_count_wwc"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="未完成"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_count_wwc_count"
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/home_bg1" />
+
+                        <TextView
+                            android:id="@+id/tv_count_yb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="一般"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_count_yb_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="100"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:text="11"
-                        android:textColor="@color/gray_33"
-                        android:textSize="12sp" />
+                        android:layout_marginTop="5dp"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/home_bg2" />
+
+                        <TextView
+                            android:id="@+id/tv_count_yz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="严重"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_count_yz_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="100"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/home_bg3" />
+
+                        <TextView
+                            android:id="@+id/tv_count_wj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="危急"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_count_wj_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="100"
+                            android:textColor="@color/gray_33"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

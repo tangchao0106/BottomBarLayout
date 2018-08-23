@@ -18,7 +18,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class  FragmentManagerActivity extends AppCompatActivity {
+public class NewHomeActivity extends AppCompatActivity {
 
     private List<Fragment> mFragmentList = new ArrayList<>();
     private FrameLayout mFlContent;
@@ -30,9 +30,9 @@ public class  FragmentManagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_manager);
+        setContentView(R.layout.activity_newhome);
         //初始化沉浸式
-        if (isImmersionBarEnabled()){
+        if (isImmersionBarEnabled()) {
             initImmersionBar();
 
         }
@@ -40,6 +40,7 @@ public class  FragmentManagerActivity extends AppCompatActivity {
         initData();
         initListener();
     }
+
     protected boolean isImmersionBarEnabled() {
         return true;
     }
@@ -51,7 +52,6 @@ public class  FragmentManagerActivity extends AppCompatActivity {
     }
 
 
-
     private void initView() {
         mFlContent = (FrameLayout) findViewById(R.id.fl_content);
         mBottomBarLayout = (BottomBarLayout) findViewById(R.id.bbl);
@@ -59,32 +59,19 @@ public class  FragmentManagerActivity extends AppCompatActivity {
 
     private void initData() {
 
-        MainFragment homeFragment = new MainFragment();
+        NewHomeFragment homeFragment = new NewHomeFragment();
 
         mFragmentList.add(homeFragment);
 
 
-        TabFragment videoFragment1 = new TabFragment();
-        Bundle bundle21 = new Bundle();
-        bundle21.putString(TabFragment.CONTENT, "测试");
-        videoFragment1.setArguments(bundle21);
+        TabFragment2 videoFragment1 = new TabFragment2();
+
         mFragmentList.add(videoFragment1);
 
 
+        TabFragment2 videoFragment2 = new TabFragment2();
 
-        TabFragment videoFragment = new TabFragment();
-        Bundle bundle2 = new Bundle();
-        bundle2.putString(TabFragment.CONTENT, "视频");
-        videoFragment.setArguments(bundle2);
-        mFragmentList.add(videoFragment);
-
-        TabFragment microFragment = new TabFragment();
-        Bundle bundle3 = new Bundle();
-        bundle3.putString(TabFragment.CONTENT, "微头条");
-        microFragment.setArguments(bundle3);
-        mFragmentList.add(microFragment);
-
-
+        mFragmentList.add(videoFragment2);
 
         changeFragment(0); //默认显示第一页
     }
@@ -121,7 +108,7 @@ public class  FragmentManagerActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 boolean tabNotChanged = mBottomBarLayout.getCurrentItem() == currentPosition; //是否还停留在当前页签
-                                bottomBarItem.setIconSelectedResourceId(R.mipmap.tab_home_selected);//更换成首页原来选中图标
+                                bottomBarItem.setIconSelectedResourceId(R.mipmap.home_newmain1);//更换成首页原来选中图标
                                 bottomBarItem.setStatus(tabNotChanged);//刷新图标
                                 cancelTabLoading(bottomBarItem);
                             }
@@ -132,15 +119,12 @@ public class  FragmentManagerActivity extends AppCompatActivity {
 
                 //如果点击了其他条目
                 BottomBarItem bottomItem = mBottomBarLayout.getBottomItem(0);
-                bottomItem.setIconSelectedResourceId(R.mipmap.tab_home_selected);//更换为原来的图标
+                bottomItem.setIconSelectedResourceId(R.mipmap.home_newmain1);//更换为原来的图标
                 cancelTabLoading(bottomItem);//停止旋转动画
             }
         });
 
-        mBottomBarLayout.setUnread(0, 20);//设置第一个页签的未读数为20
-        mBottomBarLayout.setUnread(1, 1001);//设置第二个页签的未读数
-        mBottomBarLayout.showNotify(2);//设置第三个页签显示提示的小红点
-        mBottomBarLayout.setMsg(3, "NEW");//设置第四个页签显示NEW提示文字
+
     }
 
     private void changeFragment(int currentPosition) {

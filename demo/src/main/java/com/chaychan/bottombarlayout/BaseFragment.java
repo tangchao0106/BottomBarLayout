@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 
 import com.gyf.barlibrary.ImmersionBar;
 
-/**
- * Created by houyongqi on 2017/10/20.
- */
+
 public abstract class BaseFragment extends Fragment {
 
     private boolean isVisible;
@@ -27,10 +25,19 @@ public abstract class BaseFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutID(), container, false);
         Log.e("blink", "onCreateView");
+
+
+
+
         isViewCreated = true;
         title = getTitleView();
         initView(view);
         setView();
+
+        if (isImmersionBarEnabled()){
+            initImmersionBar();
+
+        }
         return view;
     }
 

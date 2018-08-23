@@ -4,9 +4,9 @@
     <!-- 边缘线条颜色 -->
 
     <!-- 圆角的幅度 -->
-    <corners
-        android:bottomLeftRadius="5dip"
-        android:bottomRightRadius="5dip"
-        android:topLeftRadius="5dip"
-        android:topRightRadius="5dip" />
+    <!--<corners-->
+        <!--android:bottomLeftRadius="5dip"-->
+        <!--android:bottomRightRadius="5dip"-->
+        <!--android:topLeftRadius="5dip"-->
+        <!--android:topRightRadius="5dip" />-->
 </shape>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#29C070</color>
+    <color name="colorPrimary">#04cdb8</color>
     <color name="colorPrimaryDark">#29C070</color>
     <color name="colorAccent">#29C070</color>
 
@@ -17,5 +17,9 @@
     <color name="gray_33">#333</color>
     <color name="color_9ee0fd">#9ee0fd</color>
     <color name="home_bg">#feffff</color>
+    <color name="home_bg1">#29C070</color>
+    <color name="home_bg2">#FE8B08</color>
+    <color name="home_bg3">#F0474E</color>
+
 
 </resources>

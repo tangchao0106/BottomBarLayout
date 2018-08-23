@@ -9,6 +9,8 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.orhanobut.logger.Logger;
+
 import java.util.List;
 
 /**
@@ -36,13 +38,13 @@ public class ArcView extends View {
 
     //颜色 默认的颜色
     private int[] mColors = {
-            Color.parseColor("#FF4081"), Color.parseColor("#ffc0cb"),
-            Color.parseColor("#00ff00"), Color.parseColor("#0066ff"), Color.parseColor("#ffee00")
+            Color.parseColor("#FE8B08"), Color.parseColor("#FE8B08"),
+            Color.parseColor("#F0474E")
     };
 
     private int mTextSize;//文字大小
 
-    private int radius = 300;//半径
+    private int radius = 1000;//半径
 
     public ArcView(Context context) {
         super(context);
@@ -75,21 +77,29 @@ public class ArcView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //获取宽高 不要设置wrap_content
         mHeight = MeasureSpec.getSize(heightMeasureSpec);
+
         mWidth = MeasureSpec.getSize(widthMeasureSpec);
+        Logger.d("ArcView===onMeasure:mHeight= "+mHeight+"  mWidth= "+mWidth);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if (datas == null || datas.length == 0) {
+            return;
+        }
         //无数据
-        if (datas == null || datas.length == 0) return;
 
         centerX = (getRight() - getLeft()) / 2;
         centerY = (getBottom() - getTop()) / 2;
         int min = mHeight > mWidth ? mWidth : mHeight;
+        Logger.d("ArcView===onDraw: min="+min);
+        Logger.d("ArcView===onDraw:radius= "+radius);
+        Logger.d("ArcView===onDraw: getPaddingTop()= "+ getPaddingTop()+"    getPaddingBottom()= "+getPaddingBottom());
         if (radius > min / 2) {
             radius = (int) ((min - getPaddingTop() - getPaddingBottom()) / 3.5);
         }
+        Logger.d("ArcView===onDraw:radius== "+radius);
 
         //画扇形
         canvas.save();
@@ -117,8 +127,9 @@ public class ArcView extends View {
             start += angles;
         }
         //画其他
-        if (start < 359)
+        if (start < 359){
             drawLine(canvas, start, 360 - start, others, Color.GRAY);
+        }
 
     }
 
@@ -177,13 +188,16 @@ public class ArcView extends View {
             canvas.drawArc(rect, start, angles, true, mPaint);
             start += angles;
         }
+        Logger.d("ArcView===drawCircle:start= "+start);
         //画"其他"
         rest = 0;
         for (int i = maxNum; i < datas.length; i++) {
             rest += datas[i];
         }
         float angles = (float) 360 - start;
-        mPaint.setColor(Color.GRAY);
+        Logger.d("ArcView===drawCircle:angles= "+angles);
+//        mPaint.setColor(Color.GRAY);
+        mPaint.setColor(Color.parseColor("#26BE6C"));
         canvas.drawArc(rect, start, angles, true, mPaint);
 
     }
